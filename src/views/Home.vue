@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="home">
+        <img alt="Vue logo" src="../assets/logo.png">
+        <h1>{{getDate.Date||date}}</h1>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import {mapActions, mapGetters} from "vuex"
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  export default {
+    name: 'Home',
+
+    components: {},
+
+    data: () => ({
+      date: 'Sorry, we has no dateTime'
+    }),
+
+    computed: {
+      ...mapGetters({
+        getDate: 'getDate'
+      })
+    },
+
+    created() {
+      this.fetchDate();
+    },
+
+    methods: {
+      ...mapActions([
+        'fetchDate'
+      ])
+    }
+
+
   }
-}
 </script>
