@@ -1,6 +1,6 @@
 import api from 'axios'
 
-const apiUrl = 'http://localhost:7500/api/v1'
+const apiUrl = 'http://localhost:7700/api/v1'
 // const apiUrl = 'http://5e11696584b3db001497635e.mockapi.io/api/v1'
 
 export default {
