@@ -1,7 +1,8 @@
 import api from 'axios'
 
-const apiUrl = 'http://localhost:7700/api/v1'
-// const apiUrl = 'http://5e11696584b3db001497635e.mockapi.io/api/v1'
+const apiUrl = 'http://2bug.ru'
+// const apiUrl = 'http://194.177.21.46'
+const apiPath = '/api/v1'
 
 export default {
   state: {
@@ -9,7 +10,7 @@ export default {
   },
   actions: {
     fetchDate: async (context) => {
-      let { data } = await api.get(`${apiUrl}/date`)
+      let { data } = await api.get(`${apiUrl}${apiPath}/date`)
       context.commit('addDate', data)
     },
   },
